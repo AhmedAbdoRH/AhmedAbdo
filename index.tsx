@@ -203,16 +203,6 @@ const About = () => {
                 );
               })}
             </div>
-            
-            <a 
-              href="https://www.facebook.com/share/1LD8SGndxg/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-emerald-950 text-white px-10 py-4 rounded-2xl hover:bg-emerald-900 transition-all font-bold group shadow-lg"
-            >
-               <ArrowRight size={20} className="group-hover:-translate-x-2 transition-transform" />
-               اقرأ آخر المقالات
-            </a>
           </div>
         </div>
       </div>
@@ -242,10 +232,10 @@ const Certificates = () => (
                 className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </a>
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-center">
-                 <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="font-bold text-xl">الشهادات والاعتمادات الرسمية</span>
-                    <Award size={24} className="text-emerald-400" />
+            <div className="absolute -bottom-12 left-0 right-0 p-4 text-center">
+                 <div className="flex items-center justify-center gap-3">
+                    <span className="font-bold text-xl text-emerald-950">الشهادات والاعتمادات الرسمية</span>
+                    <Award size={24} className="text-emerald-600" />
                  </div>
               </div>
           </div>
