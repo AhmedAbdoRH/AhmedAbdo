@@ -95,9 +95,9 @@ const Hero = () => {
     { icon: Users, title: "الجلسات", color: "border-emerald-400", link: "https://www.canva.com/design/DAFfnsc21PQ/Y3lOAGgdjEcNGb1SVAT5rw/view?utm_content=DAFfnsc21PQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34bf7a7059" },
     { icon: MessageCircle, title: "الاستشارات", color: "border-blue-400", link: "https://www.canva.com/design/DAFfnsrGMaA/jPRNGbeAK1btsDAyFTTuxA/view?utm_content=DAFfnsrGMaA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h57447eef3a" },
     { icon: MonitorPlay, title: "الكورسات", color: "border-yellow-400", link: "https://www.canva.com/design/DAFfnWjZAbA/3X3trjXJyRFjFF354w4VWA/view?utm_content=DAFfnWjZAbA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0d36a499d7" },
-    { icon: FileText, title: "المقالات", color: "border-emerald-500", link: "https://www.facebook.com/share/1LD8SGndxg/" },
-    { icon: Zap, title: "التدريب", color: "border-red-400", link: "https://www.canva.com/design/DAFvL6_l_2U/yKMpTsxmxjGaaBgb3lj6AA/view?utm_content=DAFvL6_l_2U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72eba3d226" },
-    { icon: Youtube, title: "صناعة المحتوى", color: "border-cyan-400", link: "https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" },
+    { icon: FileText, title: "المقالات", color: "border-purple-500", link: "https://www.facebook.com/share/1LD8SGndxg/" },
+    { icon: Zap, title: "التدريب", color: "border-cyan-400", link: "https://www.canva.com/design/DAFvL6_l_2U/yKMpTsxmxjGaaBgb3lj6AA/view?utm_content=DAFvL6_l_2U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72eba3d226" },
+    { icon: Youtube, title: "صناعة المحتوى", color: "border-red-400", link: "https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" },
   ];
 
   return (
