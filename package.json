@@ -2,12 +2,14 @@
   "name": "ahmed-abdo-portfolio",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "lucide-react": "0.344.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^25.0.9",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.1",
