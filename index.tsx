@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { 
   Heart, 
-  BookOpen, 
   Users, 
   MessageCircle, 
   Phone, 
@@ -11,14 +10,9 @@ import {
   Facebook, 
   Twitter,
   ChevronUp,
-  Award,
-  Calendar,
-  Layers,
   CheckCircle2,
-  Star,
   ArrowRight,
   FileText,
-  Video,
   MonitorPlay,
   Zap,
   Youtube,
@@ -73,7 +67,16 @@ const Navbar = () => {
   );
 };
 
-const HeroCard: React.FC<{ icon: any, title: string, color: string, link: string }> = ({ icon: Icon, title, color, link }) => (
+interface HeroCardProps {
+  icon: any;
+  title: string;
+  color: string;
+  link: string;
+  // Explicitly add key to satisfy strict prop typing if required by environment
+  key?: React.Key;
+}
+
+const HeroCard = ({ icon: Icon, title, color, link }: HeroCardProps) => (
   <a 
     href={link} 
     target="_blank" 
@@ -89,42 +92,12 @@ const HeroCard: React.FC<{ icon: any, title: string, color: string, link: string
 
 const Hero = () => {
   const mainServices = [
-    { 
-      icon: Users, 
-      title: "الجلسات", 
-      color: "border-emerald-400", 
-      link: "https://www.canva.com/design/DAFfnsc21PQ/Y3lOAGgdjEcNGb1SVAT5rw/view?utm_content=DAFfnsc21PQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34bf7a7059" 
-    },
-    { 
-      icon: MessageCircle, 
-      title: "الاستشارات", 
-      color: "border-blue-400", 
-      link: "https://www.canva.com/design/DAFfnsrGMaA/jPRNGbeAK1btsDAyFTTuxA/view?utm_content=DAFfnsrGMaA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h57447eef3a" 
-    },
-    { 
-      icon: MonitorPlay, 
-      title: "الكورسات", 
-      color: "border-yellow-400", 
-      link: "https://www.canva.com/design/DAFfnWjZAbA/3X3trjXJyRFjFF354w4VWA/view?utm_content=DAFfnWjZAbA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0d36a499d7" 
-    },
-    { 
-      icon: FileText, 
-      title: "المقالات", 
-      color: "border-emerald-500", 
-      link: "https://www.facebook.com/share/1LD8SGndxg/" 
-    },
-    { 
-      icon: Zap, 
-      title: "التدريب", 
-      color: "border-red-400", 
-      link: "https://www.canva.com/design/DAFvL6_l_2U/yKMpTsxmxjGaaBgb3lj6AA/view?utm_content=DAFvL6_l_2U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72eba3d226" 
-    },
-    { 
-      icon: Youtube, 
-      title: "صناعة المحتوى", 
-      color: "border-cyan-400", 
-      link: "https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" 
-    },
+    { icon: Users, title: "الجلسات", color: "border-emerald-400", link: "https://www.canva.com/design/DAFfnsc21PQ/Y3lOAGgdjEcNGb1SVAT5rw/view?utm_content=DAFfnsc21PQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34bf7a7059" },
+    { icon: MessageCircle, title: "الاستشارات", color: "border-blue-400", link: "https://www.canva.com/design/DAFfnsrGMaA/jPRNGbeAK1btsDAyFTTuxA/view?utm_content=DAFfnsrGMaA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h57447eef3a" },
+    { icon: MonitorPlay, title: "الكورسات", color: "border-yellow-400", link: "https://www.canva.com/design/DAFfnWjZAbA/3X3trjXJyRFjFF354w4VWA/view?utm_content=DAFfnWjZAbA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0d36a499d7" },
+    { icon: FileText, title: "المقالات", color: "border-emerald-500", link: "https://www.facebook.com/share/1LD8SGndxg/" },
+    { icon: Zap, title: "التدريب", color: "border-red-400", link: "https://www.canva.com/design/DAFvL6_l_2U/yKMpTsxmxjGaaBgb3lj6AA/view?utm_content=DAFvL6_l_2U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72eba3d226" },
+    { icon: Youtube, title: "صناعة المحتوى", color: "border-cyan-400", link: "https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" },
   ];
 
   return (
@@ -148,7 +121,6 @@ const Hero = () => {
                 className="h-48 md:h-64 w-auto object-contain drop-shadow-2xl"
              />
           </div>
-          
           <h2 className="text-white text-xl md:text-3xl font-bold mt-4 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             خدمات الدعم والإرشاد النفسي
           </h2>
@@ -156,7 +128,7 @@ const Hero = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-5 max-w-7xl mx-auto">
           {mainServices.map((service, index) => (
-            <HeroCard key={index} {...service} />
+            <HeroCard key={index} icon={service.icon} title={service.title} color={service.color} link={service.link} />
           ))}
         </div>
         
@@ -171,6 +143,13 @@ const Hero = () => {
 };
 
 const About = () => {
+  const credentials = [
+    { text: "جامعة بنها - علم نفس", icon: GraduationCap },
+    { text: "باحث سيكوسوماتي", icon: Microscope },
+    { text: "رؤية الطب الشمولي", icon: Stethoscope },
+    { text: "مؤسس تقنية 2.CBT", icon: Zap }
+  ];
+
   return (
     <section id="about" className="py-24 bg-white overflow-hidden text-right">
       <div className="container mx-auto px-6">
@@ -192,7 +171,6 @@ const About = () => {
                  </div>
               </div>
             </div>
-            <div className="absolute -top-10 -right-10 w-64 h-64 bg-emerald-50 rounded-full -z-0 blur-3xl opacity-60"></div>
           </div>
           
           <div className="lg:w-1/2">
@@ -203,18 +181,7 @@ const About = () => {
             <h2 className="text-4xl font-black text-emerald-950 mb-6 leading-tight">أحمد عبده <br/> <span className="text-emerald-600">أخصائي نفسي اكلينيكي</span></h2>
             
             <div className="space-y-5 text-gray-600 text-lg leading-relaxed mb-8">
-              <p className="flex items-start gap-3 justify-end">
-                <span>طالب مؤهلات عليا - كلية الآداب - قسم علم النفس / جامعة بنها</span>
-                <GraduationCap className="text-emerald-600 shrink-0 mt-1" size={24} />
-              </p>
-              <p className="flex items-start gap-3 justify-end">
-                <span>باحث في مجال علم النفس القيم ومجال الأمراض السايكوسوماتية</span>
-                <Microscope className="text-emerald-600 shrink-0 mt-1" size={24} />
-              </p>
-              <p className="bg-emerald-50 p-5 rounded-2xl border-r-4 border-emerald-600 text-emerald-900 font-bold text-xl">
-                مؤسس لـ "تقنية 2.CBT" للتعامل مع التحديات النفسية
-              </p>
-              <p className="italic text-emerald-800 font-medium">
+              <p className="flex items-start gap-3 justify-end italic text-emerald-800 font-medium">
                 "أطمح إلى طب شمولي لا يعتمد فقط على الكيمياء، يعالج الإنسان كـ وحدة واحدة ولا يفصل النفسي عن الجسدي"
               </p>
               <p>
@@ -223,17 +190,15 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-              {[
-                { text: "جامعة بنها - علم نفس", icon: GraduationCap },
-                { text: "باحث سيكوسوماتي", icon: Microscope },
-                { text: "رؤية الطب الشمولي", icon: Stethoscope },
-                { text: "مؤسس تقنية 2.CBT", icon: Zap }
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center justify-end gap-3 bg-gray-50 p-4 rounded-2xl border border-transparent hover:border-emerald-200 transition-all hover:bg-white hover:shadow-md group">
-                  <span className="font-bold text-gray-800">{item.text}</span>
-                  <item.icon size={22} className="text-emerald-500 group-hover:scale-110 transition-transform" />
-                </div>
-              ))}
+              {credentials.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="flex items-center justify-end gap-3 bg-gray-50 p-4 rounded-2xl border border-transparent hover:border-emerald-200 transition-all hover:bg-white hover:shadow-md group">
+                    <span className="font-bold text-gray-800">{item.text}</span>
+                    <Icon size={22} className="text-emerald-500 group-hover:scale-110 transition-transform" />
+                  </div>
+                );
+              })}
             </div>
             
             <a 
@@ -254,23 +219,14 @@ const About = () => {
 
 const WorkshopSection = () => (
   <section id="workshop" className="py-24 bg-emerald-950 text-white relative overflow-hidden text-right">
-     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl"></div>
      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
-           <div className="lg:w-5/12 order-2 lg:order-1 sticky top-32">
+           <div className="lg:w-5/12 order-2 lg:order-1 lg:sticky lg:top-32">
               <span className="bg-red-600 text-white px-5 py-1.5 rounded-lg text-xs font-black mb-6 inline-block uppercase tracking-wider">ورشة سلام</span>
               <h2 className="text-5xl font-black mb-8 leading-tight">رحلة الوعي <br/> والتمكين المتكامل</h2>
               <p className="text-emerald-100/70 text-xl leading-relaxed mb-10">
-                في ورشة سلام، نطبق مفاهيم "تقنية 2.CBT" ورؤيتنا للطب الشمولي لمساعدتك على فك شفرات التحديات النفسية والجسدية، لنصل معاً إلى حالة من التوازن والانسجام التام.
+                في ورشة سلام، نطبق مفاهيم "تقنية 2.CBT" ورؤيتنا للطب الشمولي لمساعدتك على فك شفرات التحديات النفسية والجسدية.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                 {["تطبيقات تقنية 2.CBT", "دمج النفس والجسد", "إرشاد اكلينيكي متخصص", "متابعة تطور الأداء"].map((item, i) => (
-                   <div key={i} className="flex items-center justify-end gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
-                      <span className="text-emerald-50 font-bold">{item}</span>
-                      <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-emerald-950"><CheckCircle2 size={18} /></div>
-                   </div>
-                 ))}
-              </div>
               <a 
                 href={WHATSAPP_LINK}
                 target="_blank"
@@ -280,32 +236,9 @@ const WorkshopSection = () => (
                 سجل اهتمامك الآن
               </a>
            </div>
-           
-           <div className="lg:w-7/12 order-1 lg:order-2 w-full">
-              <div className="space-y-8">
-                  <div className="relative group">
-                     <div className="absolute -inset-1 bg-emerald-500/20 rounded-[2rem] blur-xl group-hover:bg-emerald-500/30 transition-all duration-700"></div>
-                     <img 
-                       src="https://i.ibb.co/FkYYHM0Q/FB-IMG-1768577755771.jpg" 
-                       alt="Workshop Main" 
-                       className="relative z-10 rounded-[2rem] shadow-2xl w-full h-auto border border-white/10"
-                     />
-                  </div>
-                  <div className="relative group">
-                     <img 
-                       src="https://i.ibb.co/Swdb95rH/FB-IMG-1768578063469.jpg" 
-                       alt="Workshop Detail 1" 
-                       className="rounded-[2rem] shadow-xl w-full h-auto border border-white/10 hover:scale-[1.01] transition-transform duration-500"
-                     />
-                  </div>
-                  <div className="relative group">
-                     <img 
-                       src="https://i.ibb.co/NngBKscs/FB-IMG-1768578079363.jpg" 
-                       alt="Workshop Detail 2" 
-                       className="rounded-[2rem] shadow-xl w-full h-auto border border-white/10 hover:scale-[1.01] transition-transform duration-500"
-                     />
-                  </div>
-              </div>
+           <div className="lg:w-7/12 order-1 lg:order-2 w-full space-y-8">
+              <img src="https://i.ibb.co/FkYYHM0Q/FB-IMG-1768577755771.jpg" alt="Workshop 1" className="rounded-[2rem] shadow-2xl w-full border border-white/10" />
+              <img src="https://i.ibb.co/Swdb95rH/FB-IMG-1768578063469.jpg" alt="Workshop 2" className="rounded-[2rem] shadow-xl w-full border border-white/10" />
            </div>
         </div>
      </div>
@@ -318,44 +251,29 @@ const Contact = () => (
         <div className="max-w-6xl mx-auto bg-white rounded-[4rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse border border-gray-100">
            <div className="lg:w-1/2 p-10 lg:p-20">
               <h2 className="text-4xl font-black text-emerald-950 mb-4">تواصل مهني</h2>
-              <p className="text-gray-500 mb-10 text-lg">يسعدني استقبال طلبات الجلسات العلاجية، أو التعاون في الأبحاث والمحاضرات العلمية.</p>
-              
+              <p className="text-gray-500 mb-10 text-lg">يسعدني استقبال طلبات الجلسات العلاجية أو الاستشارات.</p>
               <form className="space-y-6">
-                 <div className="relative">
-                    <input type="text" placeholder="الاسم الكامل" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white transition-all outline-none text-right shadow-inner" />
-                 </div>
-                 <div className="relative">
-                    <input type="email" placeholder="البريد الإلكتروني" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white transition-all outline-none text-right shadow-inner" />
-                 </div>
-                 <div className="relative">
-                    <textarea placeholder="رسالتكم أو تفاصيل طلب الاستشارة..." rows={4} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 focus:bg-white transition-all outline-none text-right shadow-inner"></textarea>
-                 </div>
-                 <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-5 rounded-2xl shadow-xl transition-all text-xl hover:-translate-y-1">إرسال الطلب</button>
+                 <input type="text" placeholder="الاسم الكامل" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right" />
+                 <input type="email" placeholder="البريد الإلكتروني" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right" />
+                 <textarea placeholder="رسالتكم..." rows={4} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right"></textarea>
+                 <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-5 rounded-2xl shadow-xl transition-all" type="button">إرسال الطلب</button>
               </form>
            </div>
-           
            <div className="lg:w-1/2 bg-emerald-600 p-10 lg:p-20 text-white flex flex-col justify-between">
               <div>
-                 <h3 className="text-3xl font-bold mb-10">معلومات الاتصال</h3>
-                 <div className="space-y-10">
-                    <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-end gap-6 group cursor-pointer">
-                       <div className="text-right">
-                          <p className="font-bold text-xl mb-1">واتساب مباشر</p>
-                          <p className="text-emerald-100" dir="ltr">{WHATSAPP_NUMBER}</p>
-                       </div>
-                       <div className="w-14 h-14 bg-white/10 group-hover:bg-white/30 rounded-2xl flex items-center justify-center transition-all shadow-lg"><Phone size={28} /></div>
-                    </a>
-                 </div>
+                 <h3 className="text-3xl font-bold mb-10 text-right">معلومات الاتصال</h3>
+                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-end gap-6 group">
+                    <div className="text-right">
+                       <p className="font-bold text-xl">واتساب مباشر</p>
+                       <p className="text-emerald-100" dir="ltr">{WHATSAPP_NUMBER}</p>
+                    </div>
+                    <div className="w-14 h-14 bg-white/10 group-hover:bg-white/30 rounded-2xl flex items-center justify-center transition-all"><Phone size={28} /></div>
+                 </a>
               </div>
-              
-              <div className="mt-16">
-                 <p className="font-bold mb-6 opacity-80 text-xl text-right">تابع المنصات التوعوية</p>
-                 <div className="flex justify-end gap-5">
-                    <a href="https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all shadow-xl"><Youtube size={28} /></a>
-                    <a href="#" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all shadow-xl"><Instagram size={28} /></a>
-                    <a href="https://www.facebook.com/share/1LD8SGndxg/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all shadow-xl"><Facebook size={28} /></a>
-                    <a href="#" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all shadow-xl"><Twitter size={28} /></a>
-                 </div>
+              <div className="flex justify-end gap-5 mt-10">
+                 <a href="https://youtube.com/@ahmedabdoshouq" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Youtube size={24} /></a>
+                 <a href="https://facebook.com/share/1LD8SGndxg/" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Facebook size={24} /></a>
+                 <a href="#" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Instagram size={24} /></a>
               </div>
            </div>
         </div>
@@ -364,25 +282,17 @@ const Contact = () => (
 );
 
 const Footer = () => (
-  <footer className="py-16 bg-white border-t border-gray-100">
-     <div className="container mx-auto px-6 text-center">
-        <div className="flex items-center justify-center gap-4 mb-8">
-           <div className="w-12 h-12 bg-emerald-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-emerald-500/20 shadow-xl">A</div>
-           <span className="font-black text-emerald-950 text-2xl tracking-tight">أحمد عبده</span>
-        </div>
-        <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto leading-relaxed italic">
-          "أطمح لطب شمولي يعالج الإنسان كوحدة واحدة، حيث النفس والجسد وجهان لعملة واحدة لا ينفصلان."
-        </p>
-        <p className="text-gray-400 text-sm mb-8 font-medium">© {new Date().getFullYear()} أحمد عبده - أخصائي نفسي اكلينيكي وباحث سيكوسوماتي. جميع الحقوق محفوظة.</p>
-        <div className="flex justify-center gap-10 text-xs text-gray-400 font-bold uppercase tracking-[0.2em]">
-           <a href="#" className="hover:text-emerald-600 transition-colors">سياسة الخصوصية</a>
-           <a href="#" className="hover:text-emerald-600 transition-colors">اتفاقية الاستخدام</a>
-        </div>
+  <footer className="py-16 bg-white border-t border-gray-100 text-center">
+     <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-black text-xl">A</div>
+        <span className="font-black text-emerald-950 text-xl">أحمد عبده</span>
      </div>
+     <p className="text-gray-400 text-sm italic mb-4 max-w-lg mx-auto">"أطمح لطب شمولي يعالج الإنسان كوحدة واحدة لا يتجزأ فيها النفسي عن الجسدي."</p>
+     <p className="text-gray-400 text-xs">© {new Date().getFullYear()} أحمد عبده. جميع الحقوق محفوظة.</p>
   </footer>
 );
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div className="min-h-screen bg-white font-['Cairo'] selection:bg-emerald-100 selection:text-emerald-900">
       <Navbar />
@@ -396,13 +306,7 @@ const App: React.FC = () => {
 };
 
 const rootElement = document.getElementById('root');
-if (!rootElement) {
-  throw new Error("Could not find root element to mount to");
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(<App />);
 }
-
-const root = ReactDOM.createRoot(rootElement);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
