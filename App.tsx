@@ -47,7 +47,11 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-3">
-           <div className="w-10 h-10 bg-emerald-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg transform rotate-3">A</div>
+           <img 
+              src="https://i.ibb.co/VcmtF0zx/1000001121.png" 
+              alt="Ahmed Abdo Logo" 
+              className="w-14 h-14 object-contain drop-shadow-md hover:scale-105 transition-transform"
+           />
            <div className="flex flex-col">
               <span className={`font-bold text-lg leading-none ${isScrolled ? 'text-emerald-900' : 'text-white'}`}>أحمد عبده</span>
               <span className={`text-[10px] tracking-widest uppercase ${isScrolled ? 'text-emerald-600' : 'text-emerald-300'}`}>أخصائي نفسي اكلينيكي</span>
@@ -131,12 +135,11 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2000&auto=format&fit=crop")',
+          backgroundImage: 'url("https://i.ibb.co/9Hd0stCT/Contact-20260116-164727.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-black/75 backdrop-blur-[1px]"></div>
       </div>
       
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
@@ -157,7 +160,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <h2 className="text-white text-xl md:text-3xl font-bold mt-10 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-white text-xl md:text-3xl font-bold mt-10 mb-10 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
             خدمات الدعم والإرشاد النفسي والنمو المتكامل
           </h2>
         </div>
@@ -186,7 +189,7 @@ const About = () => {
           <div className="lg:w-1/2 relative">
             <div className="relative z-10">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                src="https://i.ibb.co/ymBdp3Zt/FB-IMG-1768577435859.jpg" 
                 alt="Ahmed Abdo Profile" 
                 className="rounded-[3rem] shadow-2xl border-8 border-gray-50 object-cover h-[500px] w-full"
               />
@@ -264,8 +267,8 @@ const WorkshopSection = () => (
   <section id="workshop" className="py-24 bg-emerald-950 text-white relative overflow-hidden text-right">
      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl"></div>
      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-           <div className="lg:w-1/2 order-2 lg:order-1">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
+           <div className="lg:w-5/12 order-2 lg:order-1 sticky top-32">
               <span className="bg-red-600 text-white px-5 py-1.5 rounded-lg text-xs font-black mb-6 inline-block uppercase tracking-wider">ورشة سلام</span>
               <h2 className="text-5xl font-black mb-8 leading-tight">رحلة الوعي <br/> والتمكين المتكامل</h2>
               <p className="text-emerald-100/70 text-xl leading-relaxed mb-10">
@@ -289,14 +292,30 @@ const WorkshopSection = () => (
               </a>
            </div>
            
-           <div className="lg:w-1/2 order-1 lg:order-2 w-full">
-              <div className="relative group">
-                 <div className="absolute -inset-4 bg-emerald-500/20 rounded-3xl blur-2xl group-hover:bg-emerald-500/30 transition-all duration-700"></div>
-                 <img 
-                   src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000&auto=format&fit=crop" 
-                   alt="Workshop Session" 
-                   className="relative z-10 rounded-[3rem] shadow-2xl w-full h-[450px] object-cover border-2 border-white/10 transform transition-transform duration-700 group-hover:scale-[1.02]"
-                 />
+           <div className="lg:w-7/12 order-1 lg:order-2 w-full">
+              <div className="space-y-8">
+                  <div className="relative group">
+                     <div className="absolute -inset-1 bg-emerald-500/20 rounded-[2rem] blur-xl group-hover:bg-emerald-500/30 transition-all duration-700"></div>
+                     <img 
+                       src="https://i.ibb.co/FkYYHM0Q/FB-IMG-1768577755771.jpg" 
+                       alt="Workshop Main" 
+                       className="relative z-10 rounded-[2rem] shadow-2xl w-full h-auto border border-white/10"
+                     />
+                  </div>
+                  <div className="relative group">
+                     <img 
+                       src="https://i.ibb.co/Swdb95rH/FB-IMG-1768578063469.jpg" 
+                       alt="Workshop Detail 1" 
+                       className="rounded-[2rem] shadow-xl w-full h-auto border border-white/10 hover:scale-[1.01] transition-transform duration-500"
+                     />
+                  </div>
+                  <div className="relative group">
+                     <img 
+                       src="https://i.ibb.co/NngBKscs/FB-IMG-1768578079363.jpg" 
+                       alt="Workshop Detail 2" 
+                       className="rounded-[2rem] shadow-xl w-full h-auto border border-white/10 hover:scale-[1.01] transition-transform duration-500"
+                     />
+                  </div>
               </div>
            </div>
         </div>
@@ -330,13 +349,6 @@ const Contact = () => (
               <div>
                  <h3 className="text-3xl font-bold mb-10">معلومات الاتصال</h3>
                  <div className="space-y-10">
-                    <div className="flex items-center justify-end gap-6 group">
-                       <div className="text-right">
-                          <p className="font-bold text-xl mb-1">المقر المهني</p>
-                          <p className="text-emerald-100">جامعة بنها / القاهرة، مصر</p>
-                       </div>
-                       <div className="w-14 h-14 bg-white/10 group-hover:bg-white/30 rounded-2xl flex items-center justify-center transition-all shadow-lg"><Layers size={28} /></div>
-                    </div>
                     <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-end gap-6 group cursor-pointer">
                        <div className="text-right">
                           <p className="font-bold text-xl mb-1">واتساب مباشر</p>
@@ -390,24 +402,6 @@ const App: React.FC = () => {
       <WorkshopSection />
       <Contact />
       <Footer />
-      
-      {/* Scroll to Top FAB */}
-      <button 
-        onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
-        className="fixed bottom-10 right-10 bg-emerald-600 text-white p-5 rounded-3xl shadow-2xl z-40 hover:bg-emerald-700 transition-all transform hover:scale-110 active:scale-95 border-4 border-white/20"
-      >
-        <ChevronUp size={28} />
-      </button>
-
-      {/* WhatsApp Fixed Floating Button (Optional for extra accessibility) */}
-      <a 
-        href={WHATSAPP_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-32 right-10 bg-emerald-500 text-white p-5 rounded-full shadow-2xl z-40 hover:bg-emerald-600 transition-all transform hover:scale-110 active:scale-95 border-4 border-white animate-pulse"
-      >
-        <MessageCircle size={28} />
-      </a>
     </div>
   );
 };
