@@ -19,6 +19,7 @@ import {
   Youtube,
   GraduationCap,
   Microscope,
+  Award,
   Stethoscope
 } from 'lucide-react';
 
@@ -50,11 +51,12 @@ const Navbar = () => {
            </div>
         </div>
         <div className={`hidden md:flex gap-8 font-semibold text-sm ${isScrolled ? 'text-gray-700' : 'text-white'}`}>
-          <a href="#home" className="hover:text-emerald-500 transition-colors">الرئيسية</a>
-          <a href="#about" className="hover:text-emerald-500 transition-colors">عن أحمد</a>
-          <a href="#workshop" className="hover:text-emerald-500 transition-colors">ورشة سلام</a>
-          <a href="#contact" className="hover:text-emerald-500 transition-colors">اتصل بنا</a>
-        </div>
+            <a href="#home" className="hover:text-emerald-500 transition-colors">الرئيسية</a>
+            <a href="#about" className="hover:text-emerald-500 transition-colors">عن أحمد</a>
+            <a href="#certificates" className="hover:text-emerald-500 transition-colors">الشهادات</a>
+            <a href="#workshop" className="hover:text-emerald-500 transition-colors">ورشة سلام</a>
+            <a href="#contact" className="hover:text-emerald-500 transition-colors">اتصل بنا</a>
+          </div>
         <a 
           href={WHATSAPP_LINK}
           target="_blank"
@@ -218,6 +220,41 @@ const About = () => {
   );
 };
 
+const Certificates = () => (
+  <section id="certificates" className="py-24 bg-gray-50 text-right">
+    <div className="container mx-auto px-6">
+      <div className="text-center mb-16">
+        <h4 className="text-emerald-600 font-black mb-4 flex items-center justify-center gap-2">
+          <div className="w-12 h-1 bg-emerald-600 rounded-full"></div>
+          المؤهلات والاعتمادات
+        </h4>
+        <h2 className="text-4xl font-black text-emerald-950 mb-6 leading-tight">الشهادات المهنية</h2>
+      </div>
+      
+      <div className="max-w-4xl mx-auto">
+        <div className="relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <div className="relative bg-white rounded-[2rem] overflow-hidden shadow-2xl border border-emerald-100">
+            <a href="https://ibb.co/HT4xTB67" target="_blank" rel="noopener noreferrer">
+              <img 
+                src="https://i.ibb.co/Swydw5bN/Contact.png" 
+                alt="Certificates" 
+                className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </a>
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-right">
+                <div className="flex items-center justify-end gap-3 mb-2">
+                   <span className="font-bold text-xl">الشهادات والاعتمادات الرسمية</span>
+                   <Award size={24} className="text-emerald-400" />
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const WorkshopSection = () => (
   <section id="workshop" className="py-24 bg-emerald-950 text-white relative overflow-hidden text-right">
      <div className="container mx-auto px-6 relative z-10">
@@ -299,6 +336,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
+      <Certificates />
       <WorkshopSection />
       <Contact />
       <Footer />
