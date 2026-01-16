@@ -242,12 +242,12 @@ const Certificates = () => (
                 className="w-full h-auto object-contain transform group-hover:scale-[1.02] transition-transform duration-500"
               />
             </a>
-            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-right">
-                <div className="flex items-center justify-end gap-3 mb-2">
-                   <span className="font-bold text-xl">الشهادات والاعتمادات الرسمية</span>
-                   <Award size={24} className="text-emerald-400" />
-                </div>
-             </div>
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white text-center">
+                 <div className="flex items-center justify-center gap-3 mb-2">
+                    <span className="font-bold text-xl">الشهادات والاعتمادات الرسمية</span>
+                    <Award size={24} className="text-emerald-400" />
+                 </div>
+              </div>
           </div>
         </div>
       </div>
