@@ -26,6 +26,8 @@ import {
 // --- Constants ---
 const WHATSAPP_LINK = "https://wa.me/201100434503";
 const WHATSAPP_NUMBER = "+20 110 043 4503";
+const ATHAR_COMMUNITY_LINK = "https://chat.whatsapp.com/I6U7q91VQ3w477NCAHv2XG?mode=gi_t";
+const QASR_COMMUNITY_LINK = "https://chat.whatsapp.com/I6U7q91VQ3w477NCAHv2XG?mode=gi_t";
 
 // --- Components ---
 
@@ -95,11 +97,11 @@ const HeroCard = ({ icon: Icon, title, color, link }: HeroCardProps) => (
 
 const Hero = () => {
   const mainServices = [
-    { icon: Users, title: "الجلسات", color: "border-emerald-400", link: "https://www.canva.com/design/DAFfnsc21PQ/Y3lOAGgdjEcNGb1SVAT5rw/view?utm_content=DAFfnsc21PQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h34bf7a7059" },
-    { icon: MessageCircle, title: "الاستشارات", color: "border-blue-400", link: "https://www.canva.com/design/DAFfnsrGMaA/jPRNGbeAK1btsDAyFTTuxA/view?utm_content=DAFfnsrGMaA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h57447eef3a" },
-    { icon: MonitorPlay, title: "الكورسات", color: "border-yellow-400", link: "https://www.canva.com/design/DAFfnWjZAbA/3X3trjXJyRFjFF354w4VWA/view?utm_content=DAFfnWjZAbA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h0d36a499d7" },
+    { icon: Users, title: "الجلسات", color: "border-emerald-400", link: "https://ahmedabdoshouq.my.canva.site/therapy" },
+    { icon: MessageCircle, title: "الاستشارات", color: "border-blue-400", link: "https://ahmedabdoshouq.my.canva.site/consulting" },
+    { icon: MonitorPlay, title: "الكورسات", color: "border-yellow-400", link: "https://ahmedabdoshouq.my.canva.site/courses" },
     { icon: FileText, title: "المقالات", color: "border-purple-500", link: "https://www.facebook.com/share/1LD8SGndxg/" },
-    { icon: Zap, title: "التدريب", color: "border-cyan-400", link: "https://www.canva.com/design/DAFvL6_l_2U/yKMpTsxmxjGaaBgb3lj6AA/view?utm_content=DAFvL6_l_2U&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h72eba3d226" },
+    { icon: Zap, title: "التدريب", color: "border-cyan-400", link: "https://ahmedabdoshouq.my.canva.site/training" },
     { icon: Youtube, title: "صناعة المحتوى", color: "border-red-400", link: "https://youtube.com/@ahmedabdoshouq?si=Abu_rJ__s9OIj_5S" },
   ];
 
@@ -134,6 +136,37 @@ const Hero = () => {
             <HeroCard key={index} icon={service.icon} title={service.title} color={service.color} link={service.link} />
           ))}
         </div>
+
+        <div className="mt-12 max-w-2xl mx-auto px-4">
+          <a 
+            href={QASR_COMMUNITY_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative flex flex-col md:flex-row items-center justify-between p-4 md:p-2 md:pr-8 bg-gradient-to-r from-emerald-600/20 to-teal-600/20 backdrop-blur-xl border border-white/30 rounded-[2rem] hover:border-emerald-400/50 transition-all duration-500 shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden"
+          >
+            {/* Animated Background Glow */}
+            <div className="absolute -inset-full bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:animate-[shimmer_2s_infinite] skew-x-12"></div>
+            
+            <div className="flex items-center gap-5 py-4 relative z-10">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center text-white shadow-[0_10px_20px_rgba(16,185,129,0.3)] group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                <Users size={28} />
+              </div>
+              <div className="text-right">
+                <h3 className="text-white font-black text-xl md:text-2xl mb-1 tracking-tight">انضم إلى مجتمع "أثر"</h3>
+                <p className="text-emerald-100/80 text-xs md:text-sm font-medium">لمعرفة أحدث الفعاليات ومواكبة المحاضرات والورش</p>
+              </div>
+            </div>
+
+            <div className="mt-4 md:mt-0 relative z-10">
+              <div className="bg-white text-emerald-900 px-8 py-4 rounded-2xl font-black text-sm md:text-base flex items-center justify-center gap-3 shadow-xl group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500 transform group-hover:translate-x-[-5px]">
+                انضم الآن
+                <div className="bg-emerald-100 text-emerald-600 p-1 rounded-lg group-hover:bg-white/20 group-hover:text-white transition-colors">
+                  <ArrowRight size={18} className="rotate-180" />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
         
         <div className="mt-16 animate-bounce opacity-50">
            <a href="#about" className="text-white">
@@ -150,7 +183,7 @@ const About = () => {
     { text: "جامعة بنها - علم نفس", icon: GraduationCap },
     { text: "باحث سيكوسوماتي", icon: Microscope },
     { text: "رؤية الطب الشمولي", icon: Stethoscope },
-    { text: "مؤسس تقنية 2.CBT", icon: Zap }
+    { text: "مطور لتقنية 2.CBT", icon: Zap }
   ];
 
   return (
@@ -276,32 +309,32 @@ const WorkshopSection = () => (
 const Contact = () => (
   <section id="contact" className="py-24 bg-gray-50 text-right">
      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto bg-white rounded-[4rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row-reverse border border-gray-100">
-           <div className="lg:w-1/2 p-10 lg:p-20">
-              <h2 className="text-4xl font-black text-emerald-950 mb-4">تواصل مهني</h2>
-              <p className="text-gray-500 mb-10 text-lg">يسعدني استقبال طلبات الجلسات العلاجية أو الاستشارات.</p>
-              <form className="space-y-6">
-                 <input type="text" placeholder="الاسم الكامل" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right" />
-                 <input type="email" placeholder="البريد الإلكتروني" className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right" />
-                 <textarea placeholder="رسالتكم..." rows={4} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:border-emerald-500 outline-none text-right"></textarea>
-                 <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-black py-5 rounded-2xl shadow-xl transition-all" type="button">إرسال الطلب</button>
-              </form>
+        <div className="max-w-4xl mx-auto bg-emerald-600 rounded-[3rem] overflow-hidden shadow-2xl p-10 lg:p-16 text-white flex flex-col md:flex-row items-center justify-between gap-10">
+           <div className="text-center md:text-right">
+              <h2 className="text-4xl font-black mb-4">تواصل مباشر</h2>
+              <p className="text-emerald-50 text-lg mb-0">يسعدني استقبال استفساراتكم وحجز المواعيد عبر الواتساب.</p>
            </div>
-           <div className="lg:w-1/2 bg-emerald-600 p-10 lg:p-20 text-white flex flex-col justify-between">
-              <div>
-                 <h3 className="text-3xl font-bold mb-10 text-right">معلومات الاتصال</h3>
-                 <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="flex items-center justify-end gap-6 group">
-                    <div className="text-right">
-                       <p className="font-bold text-xl">واتساب مباشر</p>
-                       <p className="text-emerald-100" dir="ltr">{WHATSAPP_NUMBER}</p>
-                    </div>
-                    <div className="w-14 h-14 bg-white/10 group-hover:bg-white/30 rounded-2xl flex items-center justify-center transition-all"><Phone size={28} /></div>
-                 </a>
-              </div>
-              <div className="flex justify-end gap-5 mt-10">
-                 <a href="https://youtube.com/@ahmedabdoshouq" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Youtube size={24} /></a>
-                 <a href="https://facebook.com/share/1LD8SGndxg/" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Facebook size={24} /></a>
-                 <a href="#" target="_blank" className="w-12 h-12 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-full flex items-center justify-center transition-all"><Instagram size={24} /></a>
+           
+           <div className="flex flex-col items-center md:items-end gap-8">
+              <a 
+                href={WHATSAPP_LINK} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-6 group bg-white/10 hover:bg-white/20 p-6 rounded-3xl transition-all border border-white/20 shadow-xl"
+              >
+                 <div className="text-right">
+                    <p className="font-bold text-xl">واتساب مباشر</p>
+                    <p className="text-emerald-100" dir="ltr">{WHATSAPP_NUMBER}</p>
+                 </div>
+                 <div className="w-16 h-16 bg-white text-emerald-600 rounded-2xl flex items-center justify-center transition-all shadow-lg group-hover:scale-110">
+                    <Phone size={32} />
+                 </div>
+              </a>
+
+              <div className="flex gap-5">
+                 <a href="https://youtube.com/@ahmedabdoshouq" target="_blank" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-2xl flex items-center justify-center transition-all border border-white/10"><Youtube size={28} /></a>
+                 <a href="https://facebook.com/share/1LD8SGndxg/" target="_blank" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-2xl flex items-center justify-center transition-all border border-white/10"><Facebook size={28} /></a>
+                 <a href="#" target="_blank" className="w-14 h-14 bg-white/10 hover:bg-white hover:text-emerald-600 rounded-2xl flex items-center justify-center transition-all border border-white/10"><Instagram size={28} /></a>
               </div>
            </div>
         </div>
