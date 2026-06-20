@@ -239,7 +239,7 @@ const About = () => {
   const credentials = [
     { text: "جامعة بنها - علم نفس", icon: GraduationCap },
     { text: "باحث في الطب السيكوسوماتي", icon: Microscope },
-    { text: "مطور لتقنية 2.CBT", icon: Zap }
+    { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap }
   ];
 
   return (
@@ -370,7 +370,7 @@ const WorkshopSection = () => (
               <span className="bg-red-600 text-white px-5 py-1.5 rounded-lg text-xs font-black mb-6 inline-block uppercase tracking-wider">ورشة سلام</span>
               <h2 className="text-5xl font-black mb-8 leading-tight">رحلة الوعي <br/> والتمكين المتكامل</h2>
               <p className="text-emerald-100/70 text-xl leading-relaxed mb-10">
-                في ورشة سلام، نطبق مفاهيم "تقنية 2.CBT" ورؤيتنا للطب الشمولي لمساعدتك على فك شفرات التحديات النفسية والجسدية.
+                في ورشة سلام، نطبق مفاهيم "تقنية السماح بالرحيل 2.0" ورؤيتنا للطب الشمولي لمساعدتك على فك شفرات التحديات النفسية والجسدية.
               </p>
               <a 
                 href={WHATSAPP_LINK}
@@ -482,7 +482,7 @@ const SessionsPage = ({ onNavigate }: { onNavigate: (page: string) => void }) =>
               </div>
               <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm">
                 <Brain size={20} />
-                تقنية 2.CBT
+                تقنية السماح بالرحيل 2.0
               </div>
             </div>
           </div>
