@@ -237,13 +237,13 @@ const Hero = ({ onNavigate }: HeroProps) => {
 
 const About = () => {
   const credentials = [
+    { text: "دبلوم علم النفس الإكلينيكي - جامعة عين شمس", icon: GraduationCap },
+    { text: "بكالوريوس علم النفس - جامعة بنها", icon: BookOpen },
+    { text: "ليسانس الآداب - قسم الفلسفة - جامعة بنها", icon: BookOpen },
     { text: "جامعة بنها - علم نفس", icon: GraduationCap },
     { text: "باحث في الطب السيكوسوماتي", icon: Microscope },
     { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap },
-    { text: "عضو الفريق الإعلامي للدكتور وائل فؤاد - مدير مستشفى الخانكة للصحة النفسية", icon: Users },
-    { text: "دبلوم علم النفس الإكلينيكي - جامعة عين شمس", icon: GraduationCap },
-    { text: "بكالوريوس علم النفس - جامعة بنها", icon: BookOpen },
-    { text: "ليسانس الآداب - قسم الفلسفة - جامعة بنها", icon: BookOpen }
+    { text: "عضو الفريق الإعلامي للدكتور وائل فؤاد - مدير مستشفى الخانكة للصحة النفسية", icon: Users }
   ];
 
   return (
