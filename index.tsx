@@ -240,10 +240,10 @@ const About = () => {
     { text: "دبلوم علم النفس الإكلينيكي - جامعة عين شمس", icon: GraduationCap },
     { text: "بكالوريوس علم النفس - جامعة بنها", icon: BookOpen },
     { text: "ليسانس الآداب - قسم الفلسفة - جامعة بنها", icon: BookOpen },
+    { text: "عضو الفريق الإعلامي للدكتور وائل فؤاد - مدير مستشفى الخانكة للصحة النفسية ومستشفى الهدوء", icon: Users },
     { text: "جامعة بنها - علم نفس", icon: GraduationCap },
     { text: "باحث في الطب السيكوسوماتي", icon: Microscope },
-    { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap },
-    { text: "عضو الفريق الإعلامي للدكتور وائل فؤاد - مدير مستشفى الخانكة للصحة النفسية", icon: Users }
+    { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap }
   ];
 
   return (
@@ -289,7 +289,7 @@ const About = () => {
               {credentials.map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="flex items-center justify-end gap-3 bg-gray-50 p-4 rounded-2xl border border-transparent hover:border-emerald-200 transition-all hover:bg-white hover:shadow-md group">
+                  <div key={idx} className="flex items-center justify-start gap-3 bg-gray-50 p-4 rounded-2xl border border-transparent hover:border-emerald-200 transition-all hover:bg-white hover:shadow-md group" dir="rtl">
                     <span className="font-bold text-gray-800">{item.text}</span>
                     <Icon size={22} className="text-emerald-500 group-hover:scale-110 transition-transform" />
                   </div>
