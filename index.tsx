@@ -538,7 +538,6 @@ const SessionsPage = ({ onNavigate }: { onNavigate: (page: string) => void }) =>
                 <Heart size={16} />
                 آراء العملاء
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-emerald-950 mb-2">ماذا قالوا عنا</h2>
               <p className="text-gray-400 text-sm">اضغط على الصورة لعرضها بالحجم الكامل</p>
             </div>
 
