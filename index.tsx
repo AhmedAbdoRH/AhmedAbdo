@@ -239,7 +239,13 @@ const About = () => {
   const credentials = [
     { text: "جامعة بنها - علم نفس", icon: GraduationCap },
     { text: "باحث في الطب السيكوسوماتي", icon: Microscope },
-    { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap }
+    { text: "مطور لتقنية السماح بالرحيل 2.0", icon: Zap },
+    { text: "خبرة إكلينيكية وممارسة عملية", icon: Stethoscope },
+    { text: "عضو الفريق الإعلامي للدكتور وائل فؤاد", icon: Users },
+    { text: "مدير مستشفى الخانكة للصحة النفسية ومستشفى الهدوء", icon: Award },
+    { text: "دبلوم علم النفس الإكلينيكي - جامعة عين شمس", icon: GraduationCap },
+    { text: "بكالوريوس علم النفس - جامعة بنها", icon: BookOpen },
+    { text: "ليسانس الآداب - قسم الفلسفة - جامعة بنها", icon: BookOpen }
   ];
 
   return (
