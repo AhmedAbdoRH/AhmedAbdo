@@ -173,9 +173,9 @@ const Hero = ({ onNavigate }: HeroProps) => {
       </div>
 
       <div
-        className="absolute inset-0 z-0 opacity-35 mix-blend-soft-light"
+        className="absolute inset-0 z-0 opacity-45 mix-blend-soft-light"
         style={{
-          backgroundImage: 'linear-gradient(rgba(63, 71, 47, 0.35), rgba(63, 71, 47, 0.35)), url("https://i.ibb.co/9Hd0stCT/Contact-20260116-164727.png")',
+          backgroundImage: 'url("/assets/hero-leaves-overlay.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
