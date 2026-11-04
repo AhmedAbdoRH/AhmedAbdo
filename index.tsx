@@ -167,9 +167,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url("https://i.ibb.co/9Hd0stCT/Contact-20260116-164727.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundColor: '#59624A',
         }}
       >
       </div>
