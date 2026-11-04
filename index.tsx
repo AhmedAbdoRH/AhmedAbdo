@@ -167,7 +167,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundColor: '#59624A',
+          backgroundColor: '#3F472F',
         }}
       >
       </div>
