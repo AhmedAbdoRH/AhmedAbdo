@@ -171,6 +171,16 @@ const Hero = ({ onNavigate }: HeroProps) => {
         }}
       >
       </div>
+
+      <div
+        className="absolute inset-0 z-0 opacity-35 mix-blend-soft-light"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(63, 71, 47, 0.35), rgba(63, 71, 47, 0.35)), url("https://i.ibb.co/9Hd0stCT/Contact-20260116-164727.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+      </div>
       
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <div className="mb-8 flex flex-col items-center">
